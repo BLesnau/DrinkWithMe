@@ -11,6 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinkWithMe.Windows", "Drin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinkWithMe.WindowsPhone", "DrinkWithMe\DrinkWithMe.WindowsPhone\DrinkWithMe.WindowsPhone.csproj", "{C7B6EC0A-4808-4309-B4A6-B1B65F7F441A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D6021857-225C-4FDF-B822-B54D8BE68CC0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		DrinkWithMe\DrinkWithMe.Shared\DrinkWithMe.Shared.projitems*{3dcd7001-8119-4054-a189-a24e69d52571}*SharedItemsImports = 4
