@@ -70,7 +70,7 @@ namespace DrinkWithMe
                 {
                     // TODO: Load state from previously suspended application
                 }
-
+               sd
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
