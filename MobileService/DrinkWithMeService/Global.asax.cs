@@ -7,7 +7,7 @@ namespace drinkwithmeService
     {
         protected void Application_Start()
         {
-            WebApiConfig.Regidster();
+            WebApiConfig.Register();
         }
     }
 }
