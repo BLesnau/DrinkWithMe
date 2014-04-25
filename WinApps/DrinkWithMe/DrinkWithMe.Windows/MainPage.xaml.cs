@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace DrinkWithMe
 {
@@ -25,6 +16,28 @@ namespace DrinkWithMe
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private async void Button_Click( object sender, Windows.UI.Xaml.RoutedEventArgs e )
+        {
+           try
+           {
+              var app = Application.Current as App;
+              if ( app != null )
+              {
+                 if ( app.MobileService != null )
+                 {
+                    var login = await app.MobileService.LoginAsync( MobileServiceAuthenticationProvider.Google );
+                    var m = new MessageDialog( String.Format( "{0} {1}", login.UserId, login.MobileServiceAuthenticationToken ), "Title" );
+                    await m.ShowAsync();
+                 }
+              }
+           }
+           catch ( Exception ex )
+           {
+              var m = new MessageDialog( ex.Message, "Exception" );
+              m.ShowAsync();
+           }
         }
     }
 }
