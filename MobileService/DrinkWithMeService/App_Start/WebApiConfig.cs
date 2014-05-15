@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Web.Http;
+using DrinkWithMeService.DataObjects;
+using DrinkWithMeService.Models;
 using Microsoft.WindowsAzure.Mobile.Service;
-using drinkwithmeService.DataObjects;
-using drinkwithmeService.Models;
 
-namespace drinkwithmeService
+namespace DrinkWithMeService
 {
     public static class WebApiConfig
     {
@@ -21,13 +21,13 @@ namespace drinkwithmeService
             // line. Comment it out again when you deploy your service for production use.
             // config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             
-            Database.SetInitializer(new drinkwithmeInitializer());
+            Database.SetInitializer(new DrinkWithMeInitializer());
         }
     }
 
-    public class drinkwithmeInitializer : DropCreateDatabaseIfModelChanges<drinkwithmeContext>
+    public class DrinkWithMeInitializer : DropCreateDatabaseIfModelChanges<DrinkWithMeContext>
     {
-        protected override void Seed(drinkwithmeContext context)
+        protected override void Seed(DrinkWithMeContext context)
         {
             List<TodoItem> todoItems = new List<TodoItem>
             {

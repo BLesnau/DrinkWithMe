@@ -3,18 +3,18 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.OData;
+using DrinkWithMeService.DataObjects;
+using DrinkWithMeService.Models;
 using Microsoft.WindowsAzure.Mobile.Service;
-using drinkwithmeService.DataObjects;
-using drinkwithmeService.Models;
 
-namespace drinkwithmeService.Controllers
+namespace DrinkWithMeService.Controllers
 {
     public class TodoItemController : TableController<TodoItem>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
         {
             base.Initialize(controllerContext);
-            drinkwithmeContext context = new drinkwithmeContext();
+            DrinkWithMeContext context = new DrinkWithMeContext();
             DomainManager = new EntityDomainManager<TodoItem>(context, Request, Services);
         }
 

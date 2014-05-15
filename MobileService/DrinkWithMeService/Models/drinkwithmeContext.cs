@@ -1,13 +1,13 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using DrinkWithMeService.DataObjects;
 using Microsoft.WindowsAzure.Mobile.Service;
 using Microsoft.WindowsAzure.Mobile.Service.Tables;
-using drinkwithmeService.DataObjects;
 
-namespace drinkwithmeService.Models
+namespace DrinkWithMeService.Models
 {
-    public class drinkwithmeContext : DbContext
+    public class DrinkWithMeContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -21,7 +21,7 @@ namespace drinkwithmeService.Models
         // Web.config, is the same as the service name when hosted in Azure.
         private const string connectionStringName = "Name=MS_TableConnectionString";
 
-        public drinkwithmeContext() : base(connectionStringName)
+        public DrinkWithMeContext() : base(connectionStringName)
         {
         } 
 

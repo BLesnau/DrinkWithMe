@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
 using System.Web.Routing;
 
-namespace drinkwithmeService
+namespace DrinkWithMeService
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
